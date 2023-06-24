@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- 
+    index.html
+    By: Ryhan Mortuza (ryhan_mortuza@student.uml.edu)
+    HW4 - This project is supposed to validate and notify user of any issues regarding their inputs
+    to a multiplication table that dynamically changes outputs
+-->
+<head>
+    <meta charset="utf-8">
+    <title>HW4 Ryhan Mortuza</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <h1>Multiplication Table:</h1>
+    <form id="form" novalidate>
+
+        <!-- Multiplier form options -->
+        <fieldset>
+            <legend>Multiplier Sliders</legend>
+            <div>
+                <label for="multiplierMin">Min</label>
+                <input type="number" id="multiplierMin" name="multiplierMin" value="-100" min="-100" max="100"
+                    autocomplete="off">
+
+                <div id="multiplierMinSlider" class="slider"></div>
+            </div>
+
+            <div>
+                <label for="multiplierMax">Max</label>
+                <input type="number" id="multiplierMax" name="multiplierMax" value="-100" min="-100" max="100"
+                    autocomplete="off">
+
+                <div id="multiplierMaxSlider" class="slider"></div>
+            </div>
+        </fieldset>
+        <div id="multiplierError" class="error hidden"></div>
+
+
+        <!-- Multiplicand form options -->
+        <fieldset>
+            <legend>Multiplicand Sliders </legend>
+            <div>
+                <label for="multiplicandMin">Min</label>
+                <input type="number" id="multiplicandMin" name="multiplicandMin" value="-100" min="-100" max="100"
+                    autocomplete="off">
+
+                <div id="multiplicandMinSlider" class="slider"></div>
+            </div>
+
+            <div>
+                <label for="multiplicandMax">Max</label>
+                <input type="number" id="multiplicandMax" name="multiplicandMax" value="-100" min="-100" max="100"
+                    autocomplete="off">
+
+                <div id="multiplicandMaxSlider" class="slider"></div>
+            </div>
+        </fieldset>
+        <div id="multiplicandError" class="error hidden"></div>
+
+        <div id="formFooter">
+            <input type="submit" value="Create Table">
+
+            <label class="dynamicTab">
+                <input type="checkbox" id="dynamicTab" name="dynamicTab" value="dynamicTab">
+                Dynamically update active tab
+            </label>
+        </div>
+    </form>
+
+    <!-- Remove All Tabs -->
+    <fieldset id="tabButtons" class="hidden">
+        <legend>Remove Tabs</legend>
+        <input id="removeAllTabs" type="button" value="Remove Tabs">
+
+    </fieldset>
+
+    <!-- Tabbed table area -->
+    <div id="tableTabs" class="hidden">
+        <ul></ul>
+    </div>
+    <footer>
+        by: Ryhan Mortuza: <a href="mailto:Ryhan_Mortuza@student.uml.edu"> Ryhan_Mortuza@student.uml.edu</a>
+    </footer>
+
+</body>
+
+</html>
